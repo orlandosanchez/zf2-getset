@@ -1,4 +1,4 @@
-this a quick and dirty and pretty ugly bash script for creating zf2 entity models
+this a quick, dirty and ugly bash script for creating zf2 entity models
 
 ## Usage
 
