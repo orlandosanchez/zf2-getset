@@ -11,7 +11,7 @@ class <?=$className;?> {
 
   public function exchangeArray($data) {
 <?php foreach($argv as $prop): ?>
-    $this->$<?php echo $prop;?> = ($data['<?php echo $prop;?>']) ? $data['<?php echo $prop;?>'] : NULL;
+    $this-><?php echo $prop;?> = ($data['<?php echo $prop;?>']) ? $data['<?php echo $prop;?>'] : NULL;
 <?php endforeach; ?>
   }
        
