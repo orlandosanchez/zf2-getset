@@ -25,7 +25,21 @@ class <?=$className;?> {
   public function set<?php echo $methodName;?>(<?php echo $prop;?>) {
     $this-><?php echo $prop;?> = <?echo $prop;?>;
   }
-
 <?php endforeach; ?>
+
+
+  public function toArray() {
+    return array(
+<?php foreach($argv as $prop): 
+    $methodName= implode('', array_map(function($token) {
+      return ($token == 'id') ? strtoupper($token) : ucfirst($token);  
+    }, explode('_', $prop)));?>
+      '<?php echo $prop;?>' => $this->get<?php echo $methodName;?>(), 
+<?php endforeach; ?>
+    );
+  }
+
+
+
 }
 <?php echo '?>';
